@@ -1,0 +1,33 @@
+<form class="form-horizontal" [formGroup]="form">
+  <fieldset>
+    <legend>Band Form</legend>
+    <div class="form-group">
+      <label for="name" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input 
+        type="text" 
+        class="form-control" 
+        id="name" 
+        placeholder="Band Name"
+        formControlName="name"
+        [ngClass]="form.controls.name.invalid && form.controls.name.touched ? 'input state-error' : 'input'">
+        <div class="note note-error" *ngIf="form && !form.controls.name.valid && form.controls.name.touched && form.controls.name.errors">
+            <div *ngIf="form.controls.name.errors.required ">
+              Field required
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="founded" class="col-lg-2 control-label">Foundation Date</label>
+      <div class="col-lg-10">
+        <input 
+        type="date" 
+        class="form-control" 
+        id="foundationDate" 
+        placeholder="Foundation date"
+        formControlName="foundationDate">
+      </div>
+    </div>
+  </fieldset>
+</form>

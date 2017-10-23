@@ -1,0 +1,20 @@
+<h1>List of Bands</h1>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Foundation Date</th>
+      <th>#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of list | async">
+      <td>{{ item.name }}</td>
+      <td>{{ item.foundationDate}}</td>
+      <td>
+        <a [routerLink]="[ '/edit', item.key ]">edit</a>
+        <a [routerLink]="[ '/delete', item.key ]" >remove</a>
+      </td>
+    </tr>
+  </tbody>

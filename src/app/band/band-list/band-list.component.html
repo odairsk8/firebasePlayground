@@ -14,7 +14,7 @@
       <td>{{ item.foundationDate}}</td>
       <td>
         <a [routerLink]="[ '/edit', item.key ]">edit</a>
-        <a [routerLink]="[ '/delete', item.key ]" >remove</a>
+        <a style="cursor:pointer" (click)="delete(item.key)">remove</a>
       </td>
     </tr>
   </tbody>

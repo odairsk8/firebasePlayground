@@ -39,4 +39,8 @@ export class BandService {
         return this.itemRef.update(band);
     }
 
+    public remove(key: string){
+        this.itemsRef.remove(key);
+    }
+
 }

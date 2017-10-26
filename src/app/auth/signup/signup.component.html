@@ -1,0 +1,19 @@
+
+<form action="" method="POST" role="form">
+  <legend>Sign up to Firebase Authentication</legend>
+
+  <div class="form-group">
+    <label for="username">username</label>
+    <input type="text" name="username" [(ngModel)]="username" class="form-control" id="username" placeholder="username">
+  </div>
+
+  <div class="form-group">
+    <label for="password">password</label>
+    <input type="password" name="password" [(ngModel)]="password" class="form-control" id="password" placeholder="password">
+  </div>
+
+  <button (click)="signup()" class="btn btn-primary">Sign Up</button>
+  <button (click)="signupGoogle()" class="btn btn-danger">Google sign up</button>
+  <button (click)="signupFacebook()" class="btn btn-info">Facebook sign up</button>
+  <button (click)="logout()" class="btn btn-info">logout</button>
+</form>

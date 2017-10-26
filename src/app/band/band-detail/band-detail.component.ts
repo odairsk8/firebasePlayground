@@ -26,24 +26,27 @@ export class BandDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.verifyState();
+  }
+
+  verifyState() {
     this.route.params.subscribe((params: Params) => {
       const id = params['id'];
       if (id != null) {
         this.bandService.getItem(id).subscribe(result => {
-          this.setState('edit');
-          this.key = id;
+          this.setState('edit', id);
           this.form.setItem(result);
         });
       }
       else {
-        this.key = '';
-        this.setState('new');
+        this.setState('new', '');
       }
     });
   }
 
-  setState(state: string) {
+  setState(state: string, key: string) {
     this.formState = state;
+    this.key = key;
   }
 
   getState() {
